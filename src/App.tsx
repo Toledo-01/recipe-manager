@@ -31,10 +31,9 @@ export default function App() {
   const results = search.data ?? [];
 
   // TODO 13 — Derive, do not store.
-  //
   // Filter `saved` by the active category here in render. Do not add a
   // useState for the filtered list and do not add a useEffect to sync it.
-  const visible = saved;
+  const visible = filter === "All" ? saved : saved.filter((r) => r.category === filter);
 
   return (
     <div className="min-h-screen bg-base-200 py-8 px-4">
