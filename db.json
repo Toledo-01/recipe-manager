@@ -19,6 +19,34 @@
       "time": 30,
       "notes": "Halve the lemon next time.",
       "favorite": true
+    },
+    {
+      "mealId": "52795",
+      "title": "Chicken Handi",
+      "category": "Chicken",
+      "thumb": "https://www.themealdb.com/images/media/meals/wyxwsp1486979827.jpg",
+      "ingredients": [
+        "Chicken",
+        "Onion",
+        "Tomatoes",
+        "Garlic",
+        "Ginger paste",
+        "Vegetable oil",
+        "Cumin seeds",
+        "Coriander seeds",
+        "Turmeric powder",
+        "Chilli powder",
+        "Green chilli",
+        "Yogurt",
+        "Cream",
+        "fenugreek",
+        "Garam masala",
+        "Salt"
+      ],
+      "time": 45,
+      "notes": "yum",
+      "favorite": false,
+      "id": 3
     }
   ]
 }
