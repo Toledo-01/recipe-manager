@@ -1,11 +1,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { searchMeals, getCategories } from "./meals.api";
-import type { Recipe } from "./meals.types";
 
 // Lab 11's rule: components never see a fetch. Wrap each query in a hook here.
-//
-// Both functions below are STUBS so the app still runs before you start.
-// Replace each one with a real useQuery and delete the stub return.
 
 // TODO 6 — Search TheMealDB.
 //
@@ -19,15 +15,17 @@ import type { Recipe } from "./meals.types";
 // search already has data, and a background refetch should not flash a spinner
 // over results the user can already read.
 export function useSearchMeals(term: string) {
-  void term;
-  void searchMeals;
-  return { data: [] as Recipe[], isLoading: false, isError: false };
+  return useQuery({
+    queryKey: ["meals", term],
+    queryFn: () => searchMeals(term),
+    enabled: term.length > 0,
+  });
 }
 
 // TODO 7 — The category list. One key, no parameters.
 export function useCategories() {
-  void getCategories;
-  return { data: [] as string[], isLoading: false, isError: false };
+  return useQuery({
+    queryKey: ["categories"],
+    queryFn: getCategories,
+  });
 }
-
-void useQuery;
