@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { searchMeals, getCategories } from "./meals.api";
+import { searchMeals, getCategories, getMealById } from "./meals.api";
 
 // Lab 11's rule: components never see a fetch. Wrap each query in a hook here.
 
@@ -27,5 +27,14 @@ export function useCategories() {
   return useQuery({
     queryKey: ["categories"],
     queryFn: getCategories,
+  });
+}
+
+export function useMeal(mealId: string | undefined) {
+  return useQuery({
+    queryKey: ["meal", mealId],
+    queryFn: () => getMealById(mealId!),
+    enabled: Boolean(mealId),
+    staleTime: Infinity,
   });
 }
